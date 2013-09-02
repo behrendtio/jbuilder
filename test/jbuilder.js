@@ -39,9 +39,9 @@ describe('jbuilder', function() {
     }});
   });
 
-  it('ignores falsy values', function() {
+  it('ignores false values', function() {
     var output = jbuilder.create(function(json) {
-      json.ignoreFalsy = true;
+      json.setIgnoreFalse(true);
       json.set('username', false);
     });
 
