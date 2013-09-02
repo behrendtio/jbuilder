@@ -65,6 +65,14 @@ describe('jbuilder', function() {
     }).to.throwError();
   });
 
+  it('extracts from arrays', function() {
+    var output = parsedOutput(jbuilder.encode(function(json) {
+      json.extract([{ foo: 1, bar: 1 }, { foo: 2, bar: 2 }, { foo: 3, bar: 3 }], 'foo');
+    }));
+
+    expect(output).to.eql([{ foo: 1 }, { foo: 2 }, { foo: 3 }]);
+  });
+
   it('turns given object into array', function() {
     var output = parsedOutput(jbuilder.encode(function(json) {
       json.set('users', function(json) {
