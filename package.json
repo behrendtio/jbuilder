@@ -1,0 +1,25 @@
+{
+  "name": "jbuilder",
+  "version": "0.0.1",
+  "description": "Mongoose fixtures library inspired by factory_girl",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "keywords": ["json", "builder", "DSL"],
+  "author": "Mario Behrendt <info@mario-behrendt.de>",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type" : "git",
+    "url": "git://github.com/behrendtio/jbuilder.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies" : {
+    "mocha": "1.12.1",
+    "expect.js": "0.2.0"
+  }
+}
