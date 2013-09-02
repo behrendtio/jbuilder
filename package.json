@@ -1,7 +1,7 @@
 {
   "name": "jbuilder",
   "version": "0.0.2",
-  "description": "Mongoose fixtures library inspired by factory_girl",
+  "description": "Create JSON structures via a Builder-style DSL in Node.js",
   "main": "index.js",
   "engines": {
     "node": ">= 0.8.0"
