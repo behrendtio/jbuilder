@@ -2,12 +2,15 @@
 
 # Jbuilder for Node.js
 
-## TODO
+## Purpose
 
-* NPM release
-* Readme
-    * Installation
-    * Description
+Tiny WIP node.js port of rails' jbuilder.
+
+## Installation
+
+```bash
+$ npm i jbuilder
+```
 
 ## Usage
 
