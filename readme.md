@@ -1,9 +1,10 @@
+[![Build Status](https://travis-ci.org/behrendtio/jbuilder.png?branch=master)](https://travis-ci.org/behrendtio/jbuilder)
+
 # Jbuilder for Node.js
 
 ## TODO
 
 * NPM release
-* History
 * Readme
     * Installation
     * Description
