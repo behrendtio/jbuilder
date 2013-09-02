@@ -15,7 +15,7 @@ $ npm i jbuilder
 ## Usage
 
 ```javascript
-var jbuilder = require('./');
+var jbuilder = require('jbuilder');
 
 var user = {
   admin: true,
