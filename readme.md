@@ -37,7 +37,7 @@ var product = {
   available: true
 };
 
-var output = jbuilder.encode(function(json) {
+var output = jbuilder.create(function(json) {
   // Set values
   json.set('name', user.name);
 
@@ -63,9 +63,14 @@ var output = jbuilder.encode(function(json) {
   var value = false;
   json.set('value', value); // Not present
 
-  // Extract values
+  // Extract values of object
   json.set('product', function(json) {
     json.extract(product, 'price', 'name', 'weight');
+  });
+
+  // Extract values of array
+  json.set('product', function(json) {
+    json.extract([product, product], 'price', 'name', 'weight');
   });
 
   // Turns object into array
@@ -79,9 +84,28 @@ var output = jbuilder.encode(function(json) {
   });
 })
 
+console.log(output.target());
+// {"name":"Foo","secretLink":"http://...","profile":{"imagePath":"/0815.jpg","chuck":{"name":"Norris"}},"admin":false,"product":[{"price":12.99,"name":"Awesome thing","weight":"1kg"},{"price":12.99,"name":"Awesome thing","weight":"1kg"}],"orders":[{"id":1},{"id":2}]}
+
+// Return json string instead of container
+var output = jbuilder.encode(function(json) {
+  json.set('name', 'foo');
+});
+
 console.log(output);
-// {"name":"Foo","secretLink":"http://...","profile":{"imagePath":"/0815.jpg","chuck":{"name":"Norris"}},"admin":false,"product":{"price":12.99,"name":"Awesome thing","weight":"1kg"},"orders":[{"id":1},{"id":2}]}
+// {"name":"foo"}
 ```
+
+## API
+
+### #create(fn)
+
+Returns JSON container. Call `target()` on the container to get the JSON
+representation as string.
+
+### encode(fn)
+
+Same as `create()`, but returns JSON string instead.
 
 ## License
 
