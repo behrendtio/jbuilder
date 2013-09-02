@@ -50,9 +50,9 @@ var output = jbuilder.encode(function(json) {
   json.set('profile', function(json) {
     json.set('imagePath', user.profile.imagePath);
 
-    // Set thrid level values
+    // Set third level values
     json.set('chuck', function(json) {
-      json.set('name', user.profile.chuck);
+      json.set('name', user.profile.chuck.name);
     });
   });
 
@@ -80,7 +80,7 @@ var output = jbuilder.encode(function(json) {
 })
 
 console.log(output);
-// {"name":"Foo","secretLink":"http://...","profile":{"imagePath":"/0815.jpg","chuck":{"name":{"name":"Norris"}}},"admin":false,"product":{"price":12.99,"name":"Awesome thing","weight":"1kg"},"orders":[{"id":1},{"id":2}]}
+// {"name":"Foo","secretLink":"http://...","profile":{"imagePath":"/0815.jpg","chuck":{"name":"Norris"}},"admin":false,"product":{"price":12.99,"name":"Awesome thing","weight":"1kg"},"orders":[{"id":1},{"id":2}]}
 ```
 
 ## License
