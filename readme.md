@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Tiny WIP Node.js port of rails' jbuilder.
+Tiny Node.js port of rails' jbuilder.
 
 ## Installation
 
