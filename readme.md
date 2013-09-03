@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Tiny WIP node.js port of rails' jbuilder.
+Tiny WIP Node.js port of rails' jbuilder.
 
 ## Installation
 
@@ -110,7 +110,7 @@ var output = jbuilder.encode(function(json) {
       json.set('id', 2);
     });
   });
-})
+});
 
 console.log(output);
 // {"orders":[{"id":1},{"id":2}]}
@@ -131,6 +131,26 @@ var output = jbuilder.encode(function(json) {
 
 console.log(output);
 // {"admin":false}
+```
+
+#### json.setConvert(fn)
+
+Calls the given `fn` with the value as parameter before a value is inserted.
+
+```javascript
+// Lowercase all value
+var convert = function(value) {
+  return value.toLowerCase();
+};
+
+var output = jbuilder.encode(function(json) {
+  json.setConvert(convert);
+  json.set('name', 'FOO');
+  json.set('email', 'BAR@DOMAIN.TLD');
+});
+
+console.log(output);
+// {"name":"foo","email":"bar@domain.tld"}
 ```
 
 ## License

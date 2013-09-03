@@ -2,7 +2,8 @@
 0.0.3 / 2013-09-02 
 ==================
 
- * More docs; added setIgnoreFalse() as function
+ * More docs
+ * Added `setIgnoreFalse()`
  * Changed package description
 
 0.0.2 / 2013-09-02 

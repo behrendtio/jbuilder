@@ -86,4 +86,32 @@ describe('jbuilder', function() {
 
     expect(output.content).to.eql({ users: [{ name: 'foo' }, { bar: 'baz' }]});
   });
+
+  it('runs convert function if present', function() {
+    var convert = function(value) { return value.toLowerCase() };
+
+    var output = jbuilder.create(function(json) {
+      json.setConvert(convert);
+
+      json.set('name', 'TEST');
+      json.set('choices', function(json) {
+        json.setConvert(convert);
+        json.extract({ yes: 'TRUE', no: 'FALSE' }, 'yes');
+      });
+      json.set('products', function(json) {
+        json.setConvert(convert);
+        json.extract([{ id: 1, name: 'PROD 1' }, { id: 2, name: 'PROD 2' }], 'name');
+      });
+      json.set('orders', function(json) {
+        json.child(function(json) {
+          json.setConvert(convert);
+          json.set('number', '1ABC2');
+        });
+      });
+    });
+
+    expect(output.content).to.eql({ name: 'test', choices: { yes: 'true' },
+      products: [{ name: 'prod 1' }, { name: 'prod 2' }], orders: [{ number: '1abc2' }]}
+    );
+  });
 });
