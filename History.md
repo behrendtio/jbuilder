@@ -1,4 +1,9 @@
 
+0.0.4 / 2013-09-03 
+==================
+
+ * Added `setConvert()` to change all value with a specified function
+
 0.0.3 / 2013-09-02 
 ==================
 

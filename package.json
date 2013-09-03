@@ -1,6 +1,6 @@
 {
   "name": "jbuilder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Create JSON structures via a Builder-style DSL in Node.js",
   "main": "index.js",
   "engines": {
