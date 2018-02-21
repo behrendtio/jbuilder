@@ -1,4 +1,9 @@
 
+0.0.5 / 2018-02-21
+==================
+
+  * Added ability to iterate through an array with a function via extract
+
 0.0.4 / 2013-09-03 
 ==================
 
