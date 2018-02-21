@@ -94,6 +94,21 @@ console.log(output);
 // {"products":[{"price":12.99,"name":"Foo","weight":"1kg"},{"price":12.99,"name":"Foo","weight":"1kg"}]}
 ```
 
+`extract` also allows a function to be passed as second argument, to iterate over an array:
+
+```javascript
+var users = [{ id: 1, username: 'foo' }];
+
+var output = jbuilder.encode(function(json) {
+  json.extract(users, function(json, user) {
+    json.set('username', user.username);
+  });
+});
+
+console.log(output);
+// [{"username":"foo"}]
+```
+
 #### json.child(fn)
 
 Adds all values set in the given callback within an array instead of a plain

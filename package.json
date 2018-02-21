@@ -6,19 +6,22 @@
   "engines": {
     "node": ">= 0.8.0"
   },
-  "keywords": ["json", "builder", "DSL"],
+  "keywords": [
+    "json",
+    "builder",
+    "DSL"
+  ],
   "author": "Mario Behrendt <info@mario-behrendt.de>",
   "scripts": {
     "test": "make test"
   },
   "repository": {
-    "type" : "git",
+    "type": "git",
     "url": "git://github.com/behrendtio/jbuilder.git"
   },
   "license": "MIT",
-  "dependencies": {
-  },
-  "devDependencies" : {
+  "dependencies": {},
+  "devDependencies": {
     "mocha": "1.12.1",
     "expect.js": "0.2.0"
   }

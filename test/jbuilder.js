@@ -114,4 +114,16 @@ describe('jbuilder', function() {
       products: [{ name: 'prod 1' }, { name: 'prod 2' }], orders: [{ number: '1abc2' }]}
     );
   });
+
+  it('allows extact to have a function', function() {
+    var users = [{ id: 1, username: 'foo' }];
+
+    var output = jbuilder.create(function(json) {
+      json.extract(users, function(json, user) {
+        json.set('username', user.username);
+      });
+    });
+
+    expect(output.content).to.eql([{ username: users[0].username }]);
+  });
 });
